@@ -1,0 +1,9 @@
+.newPostContainer {
+    border: 1px solid red;
+    width: 50%;
+    text-align: center;
+}
+
+.newPostHeader{
+    font-size: 30px;
+}
