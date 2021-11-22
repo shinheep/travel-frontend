@@ -47,7 +47,11 @@ function CreatePost() {
 
   return (
     <div className="CreatePost">
-      <h1>Create Post</h1>
+
+      <div className="plusButton">
+        <Button variant="outlined">+</Button>
+      </div>
+
       <div className="newPostContainer">
         <div className="newPostHeader"> Create New Post</div>
         <form onSubmit={handleSubmit}>
