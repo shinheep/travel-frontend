@@ -1,8 +1,9 @@
 .newPostContainer {
-    border: 1px solid red;
+    border: 1px solid #028090;
     width: 50%;
     text-align: center;
     margin: 0 auto;
+    border-radius: 50px;
 }
 
 .newPostHeader{

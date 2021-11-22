@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import {Navigate} from 'react-router-dom'
 import './createPost.css';
 
 function CreatePost() {
@@ -11,6 +12,8 @@ function CreatePost() {
     price: "",
     caption: "",
   });
+
+  const [redirect, setRedirect] = useState(false)
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -32,9 +35,14 @@ function CreatePost() {
       body: JSON.stringify(post),
     })
       .then((response) => response.json())
-      .then((data) =>
+      .then((data) =>{
         setPost({ username: "", img: "", location: "", price: "", caption: "" })
-      );
+        setRedirect(true)
+      });
+
+      if(redirect) {
+        return <Navigate to='/'/>
+      }
   };
 
   return (
