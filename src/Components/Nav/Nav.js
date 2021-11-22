@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -9,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { MenuItem } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -53,30 +52,33 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	},
 }));
 
-export default function SearchAppBar() {
+function Nav() {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static'>
-				<Toolbar>
-					<IconButton
-						size='large'
-						edge='start'
-						color='inherit'
-						aria-label='open drawer'
-						sx={{ mr: 2 }}>
-						<MenuIcon />
-					</IconButton>
-				<MenuItem>
-				<Link to = "/" >
-				Home
-				</Link>
-				</MenuItem>
+				<Toolbar sx={{ backgroundColor: '#F0F3BD', color: '#05668D' }}>
+					<Typography
+						variant='h6'
+						noWrap
+						component='div'
+						sx={{
+							
+							flexGrow: 1,
+							color: 'white',
+							display: { xs: 'none', sm: 'block' },
+						}}>
+						<Link to='/'>Home</Link> &nbsp;&nbsp;
+						<Link to='/createPost'>Create Post</Link>&nbsp;&nbsp;
+						<Link to='/teamPage'>Team Page</Link>&nbsp;&nbsp;
+						<Link to='/loginSignup'>Login</Link>
+					</Typography>
+
 					<Search>
 						<SearchIconWrapper>
 							<SearchIcon />
 						</SearchIconWrapper>
 						<StyledInputBase
-							placeholder='Search…'
+							placeholder='Search'
 							inputProps={{ 'aria-label': 'search' }}
 						/>
 					</Search>
@@ -85,3 +87,5 @@ export default function SearchAppBar() {
 		</Box>
 	);
 }
+
+export default Nav;

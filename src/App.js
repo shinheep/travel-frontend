@@ -15,7 +15,7 @@ function App() {
 				<SignUp/>
 				<Login/>
 				<CreatePost/>
-				<Feed/>
+				<Feed/> 
 				<TeamPage/>
 				<Footer/>
 			{/* </Routes> */}

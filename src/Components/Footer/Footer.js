@@ -3,28 +3,41 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import HomeIcon from '@mui/icons-material/Home';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 function Footer() {
-  const [value, setValue] = useState(0);
+	const [value, setValue] = useState(0);
 
-  return (
-    <Box sx={{ width: 500 }}>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-      </BottomNavigation>
-    </Box>
-  );
+	return (
+		<Box sx={{ textAlign: 'center' }}>
+			<BottomNavigation
+				sx={{ backgroundColor: '#F0F3BD' }}
+				showLabels
+				value={value}
+				onChange={(event, newValue) => {
+					setValue(newValue);
+				}}>
+				<BottomNavigationAction
+					sx={{ color: '#02C39A' }}
+					label='Create Post'
+					icon={<PostAddIcon />}
+				/>
+				<BottomNavigationAction
+					sx={{ color: '#02C39A' }}
+					label='Home'
+					icon={<HomeIcon />}
+				/>
+				<BottomNavigationAction
+					sx={{ color: '#02C39A' }}
+					label='Search'
+					icon={<SearchIcon />}
+				/>
+			</BottomNavigation>
+		</Box>
+	);
 }
 
 export default Footer;
