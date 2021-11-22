@@ -88,7 +88,7 @@ function Nav() {
 							{<ContactPageIcon />} Team Page
 						</Link>
 						&nbsp;&nbsp;
-						<Link to='/loginSignup' style={linkStyle}>
+						<Link to='/login' style={linkStyle}>
 							{<VpnKeyIcon/>} Login
 						</Link>
 					</Typography>
