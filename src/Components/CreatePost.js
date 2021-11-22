@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 import '../createPost.css';
 
 function CreatePost() {
@@ -27,18 +29,55 @@ function CreatePost() {
 		.then(data => setPost({username: '', img: '', location: '', price: '', caption: ''}))
 	}
 
+
+
 	return (
     <div className="CreatePost">
       <h1>Create Post</h1>
       <div className="newPostContainer">
 		<div className="newPostHeader"> Create New Post</div>
 		<form onSubmit={handleSubmit}>
-		<div><input onChange={handleChange} name="username" type="text" placeholder="Username" value={post.username} /></div>
-			<div><input onChange={handleChange} name="img" type="text" placeholder="Image URL" value={post.img} /></div>
-			<div><input onChange={handleChange} name="location" type="text" placeholder="Location" value={post.location}/></div>
-			<div><input onChange={handleChange} name="price" type="text" placeholder="Price" value={post.price}/></div>
-			<div><input onChange={handleChange} name="caption" type="text" placeholder="Caption" value={post.caption}/></div>
-			<div><button type="submit">Post</button></div>
+		<div>            <TextField
+              className="outlined-textarea"
+              label="Username"
+              placeholder="Username"
+              onChange={handleChange}
+			  name="username"
+			  value={post.username}
+            /></div>
+			<div>            <TextField
+              className="outlined-textarea"
+              label="Image URL"
+              placeholder="ImageURL"
+              onChange={handleChange}
+			  name="img"
+			  value={post.img}
+            /></div>
+			<div>            <TextField
+              className="outlined-textarea"
+              label="Location"
+              placeholder="Location"
+              onChange={handleChange}
+			  name="location"
+			  value={post.location}
+            /></div>
+			<div>	  <TextField
+              className="outlined-textarea"
+              label="Price"
+              placeholder="Price"
+              onChange={handleChange}
+			  name="price"
+			  value={post.price}
+            /></div>
+			<div>	  <TextField
+              className="outlined-textarea"
+              label="Caption"
+              placeholder="Caption"
+              onChange={handleChange}
+			  name="caption"
+			  value={post.caption}
+            /></div>
+			<Button type="submit" variant="outlined" size="large">Post</Button>
 		</form>
       </div>
     </div>
