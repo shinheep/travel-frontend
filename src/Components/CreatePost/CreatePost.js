@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import '../createPost.css';
+import './createPost.css';
 
 function CreatePost() {
 	const [post, setPost] = useState({username: '', img: '', location: '', price: '', caption: ''})
