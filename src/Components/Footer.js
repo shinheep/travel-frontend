@@ -22,6 +22,9 @@ function Footer() {
 				<Nav.Item>
 					<Nav.Link /*href='/home'*/ eventKey='link-5'> Option 5</Nav.Link>
 				</Nav.Item>
+				<Nav.Item>
+					<Nav.Link /*href='/home'*/ eventKey='link-5'> Option 5</Nav.Link>
+				</Nav.Item>
 			</Nav>
 		</div>
 	);
