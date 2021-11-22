@@ -1,5 +1,7 @@
 import { Container, Col, Row } from "react-bootstrap";
 import { Form } from "react-bootstrap";
+import Button from "@mui/material/Button";
+
 
 function Login() {
   return (
@@ -28,10 +30,11 @@ function Login() {
             <Form.Label column sm="2">
               Password
             </Form.Label>
-            <Col sm="10">
+            <Col sm="5">
               <Form.Control type="password" placeholder="Password" />
             </Col>
           </Form.Group>
+          <Button variant="outlined" size="large">Login</Button>
         </Form>
       </Container>
     </>
