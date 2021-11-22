@@ -1,33 +1,29 @@
-import { Nav } from 'react-bootstrap';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import RestoreIcon from '@mui/icons-material/Restore';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function Footer() {
-	return (
-		<div className='Footer'>
-			<Nav
-				className='justify-content-center'
-				variant='pills'
-				defaultActiveKey='/home'>
-				<Nav.Item>
-					<Nav.Link /*href='/home'*/ eventKey='link-1'> Option 1</Nav.Link>
-				</Nav.Item>
-				<Nav.Item>
-					<Nav.Link /*href='/home'*/ eventKey='link-2'> Option 2</Nav.Link>
-				</Nav.Item>
-				<Nav.Item>
-					<Nav.Link /*href='/home'*/ eventKey='link-3'> Option 3</Nav.Link>
-				</Nav.Item>
-				<Nav.Item>
-					<Nav.Link /*href='/home'*/ eventKey='link-4'> Option 4</Nav.Link>
-				</Nav.Item>
-				<Nav.Item>
-					<Nav.Link /*href='/home'*/ eventKey='link-5'> Option 5</Nav.Link>
-				</Nav.Item>
-				<Nav.Item>
-					<Nav.Link /*href='/home'*/ eventKey='link-5'> Option 5</Nav.Link>
-				</Nav.Item>
-			</Nav>
-		</div>
-	);
+  const [value, setValue] = React.useState(0);
+
+  return (
+    <Box sx={{ width: 500 }}>
+      <BottomNavigation
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      >
+        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+      </BottomNavigation>
+    </Box>
+  );
 }
 
 export default Footer;
