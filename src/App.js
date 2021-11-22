@@ -12,8 +12,8 @@ function App() {
 		<div className='App'>
 			<Nav />
 			<Routes>
-				<Route exact path='/loginSignup' element={<SignUp />} />
-				<Route exact path='/loginSignup' element={<Login />} />
+				<Route exact path='/Signup' element={<SignUp />} />
+				<Route exact path='/login' element={<Login />} />
 				<Route exact path='/createPost' element={<CreatePost />} />
 				<Route exact path='/' element={<Feed />} />
 				<Route exact path='/teamPage' element={<TeamPage />} />

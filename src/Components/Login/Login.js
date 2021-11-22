@@ -1,50 +1,65 @@
 import { Container, Col, Row } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+
+const linkStyle = {
+	textDecoration: 'none',
+	color: 'white',
+};
 
 function Login() {
   return (
-    <>
-      <Container>
-        <Row className="justify-content-md-center">
-          <Col sm={3}>
-            <h1>Login</h1>
-            <Form>
-              <Form.Group
-                as={Row}
-                className="mb-3"
-                controlId="formPlaintextEmail"
-              >
-                <Form.Label column sm="4">
-                  Email
-                </Form.Label>
-                <Col sm="12">
-                  <Form.Control placeholder="Email" />
-                </Col>
-              </Form.Group>
+		<>
+			<Container>
+				<Row className='justify-content-md-center'>
+					<Col sm={3}>
+						<h1>Login</h1>
+						<Form>
+							<Form.Group
+								as={Row}
+								className='mb-3'
+								controlId='formPlaintextEmail'>
+								<Form.Label column sm='4'>
+									Email
+								</Form.Label>
+								<Col sm='12'>
+									<Form.Control placeholder='Email' />
+								</Col>
+							</Form.Group>
 
-              <Form.Group
-                as={Row}
-                className="mb-3"
-                controlId="formPlaintextPassword"
-              >
-                <Form.Label column sm="4">
-                  Password
-                </Form.Label>
-                <Col sm="12">
-                  <Form.Control type="password" placeholder="Password" />
-                </Col>
-              </Form.Group>
-              <Button style={{backgroundColor: '#05668d'}} variant="contained" size="large">
-                Login
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-    </>
-  );
+							<Form.Group
+								as={Row}
+								className='mb-3'
+								controlId='formPlaintextPassword'>
+								<Form.Label column sm='4'>
+									Password
+								</Form.Label>
+								<Col sm='12'>
+									<Form.Control type='password' placeholder='Password' />
+								</Col>
+							</Form.Group>
+							<Button
+								style={{ backgroundColor: '#05668d' }}
+								variant='contained'
+								size='large'>
+								Login
+							</Button>
+						</Form>
+            <br />
+            <p>OR</p>
+						<Button
+							style={{ backgroundColor: '#05668d' }}
+							variant='contained'
+							size='large'>
+							<Link style = {linkStyle} to='/signup'>Sign up</Link>
+						</Button>
+					</Col>
+				</Row>
+				
+			</Container>
+		</>
+	);
 }
 
 export default Login;
-
