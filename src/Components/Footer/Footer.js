@@ -15,8 +15,8 @@ function Footer() {
 			<BottomNavigation
 				sx={{
 					backgroundColor: '#05668D',
-					position: 'bottom',
-				
+					position: 'fixed',
+					bottom:"0",
 					width: '100%',
 				}}
 				showLabels
