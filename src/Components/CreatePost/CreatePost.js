@@ -39,11 +39,11 @@ function CreatePost() {
         setPost({ username: "", img: "", location: "", price: "", caption: "" })
         setRedirect(true)
       });
-
-      if(redirect) {
-        return <Navigate to='/'/>
-      }
   };
+
+  if(redirect) {
+    return <Navigate to='/'/>
+  }
 
   return (
     <div className="CreatePost">
@@ -110,7 +110,7 @@ function CreatePost() {
               value={post.caption}
             />
           </div>
-          <Button type="submit" variant="outlined" size="large">
+          <Button style={{backgroundColor: '#05668d'}} type="submit" variant="outlined" size="large">
             Post
           </Button>
         </form>
