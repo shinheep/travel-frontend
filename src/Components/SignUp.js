@@ -2,10 +2,10 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Container } from "react-bootstrap";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 function SignUp() {
-  const [accountInfo, setAccountInfo] = useState({ email: "", name: "",password:"" });
+  // const [accountInfo, setAccountInfo] = useState({ email: "", name: "",password:"" });
 
   return (
     <>
