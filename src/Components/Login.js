@@ -13,7 +13,7 @@ function Login() {
             <Form.Label column sm="2">
               Email
             </Form.Label>
-            <Col sm="10">
+            <Col sm="5">
               <Form.Control
                 plaintext
                 readOnly
