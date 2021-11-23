@@ -44,7 +44,7 @@ function Footer() {
 					component={Link}
 					to='/teamPage'
 					sx={{ color: '#F0F3BD' }}
-					label='Team Page'
+					label='About'
 					icon={<AccountBoxIcon />}
 				/>
 			</BottomNavigation>
