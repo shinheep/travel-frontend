@@ -101,7 +101,7 @@ function Nav() {
 						</Link>
 					</Typography>
 
-					<Search>
+					<Search id = "Search">
 						<SearchIconWrapper>
 							<SearchIcon />
 						</SearchIconWrapper>
