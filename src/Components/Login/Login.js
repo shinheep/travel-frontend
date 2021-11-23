@@ -14,7 +14,7 @@ const linkStyle = {
 };
 
 function Login() {
-  const [signIn, setSignIn] = useState({
+  const [loggedUser, setLoggedUser] = useState({
     email: "",
     password: "",
   });
@@ -25,7 +25,7 @@ function Login() {
     const name = event.target.name;
     const copy = Object.assign({}, signIn);
     copy[name] = value;
-    setSignIn(copy);
+    setLoggedUser(copy);
   };
 
   return (
@@ -46,10 +46,10 @@ function Login() {
               <TextField
                 className="outlined-textarea"
                 label="Email"
-                placeholder="Email"
+                placeholder="Email Address"
                 multiline
                 onChange={handleChange}
-                value={signIn.email}
+                value={loggedUser.email}
                 name="email"
               />
 
@@ -59,7 +59,7 @@ function Login() {
                 label="Password"
                 autoComplete="current-password"
                 onChange={handleChange}
-                value={signIn.password}
+                value={loggedUser.password}
                 name="password"
               />
               <div className= "buttons">
