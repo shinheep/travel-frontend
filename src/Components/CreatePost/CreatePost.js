@@ -1,8 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import {Navigate} from 'react-router-dom'
-import './createPost.css';
+import { Navigate } from "react-router-dom";
+import "./createPost.css";
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "white",
+};
 
 function CreatePost() {
   const [post, setPost] = useState({
@@ -13,7 +18,7 @@ function CreatePost() {
     caption: "",
   });
 
-  const [redirect, setRedirect] = useState(false)
+  const [redirect, setRedirect] = useState(false);
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -35,22 +40,24 @@ function CreatePost() {
       body: JSON.stringify(post),
     })
       .then((response) => response.json())
-      .then((data) =>{
-        setPost({ username: "", img: "", location: "", price: "", caption: "" })
-        setRedirect(true)
+      .then((data) => {
+        setPost({
+          username: "",
+          img: "",
+          location: "",
+          price: "",
+          caption: "",
+        });
+        setRedirect(true);
       });
   };
 
-  if(redirect) {
-    return <Navigate to='/'/>
+  if (redirect) {
+    return <Navigate to="/" />;
   }
 
   return (
     <div className="CreatePost">
-
-      <div className="plusButton">
-        <Button variant="outlined">+</Button>
-      </div>
 
       <div className="newPostContainer">
         <div className="newPostHeader"> Create New Post</div>
@@ -110,7 +117,12 @@ function CreatePost() {
               value={post.caption}
             />
           </div>
-          <Button style={{backgroundColor: '#05668d'}} type="submit" variant="outlined" size="large">
+          <Button
+            style={{ backgroundColor: "#05668d" }}
+            type="submit"
+            variant="contained"
+            size="large"
+          >
             Post
           </Button>
         </form>
