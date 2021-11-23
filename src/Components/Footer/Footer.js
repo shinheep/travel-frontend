@@ -16,7 +16,7 @@ function Footer() {
 		<Box sx={{ textAlign: 'center' }}>
 			<BottomNavigation
 				sx={{
-					backgroundColor: '#05668D',
+					backgroundColor: '#00bbf9',
 					position: 'fixed',
 					bottom: '0',
 					width: '100%',

@@ -59,14 +59,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const linkStyle = {
 	textDecoration: 'none',
-	color:"white",
+	color:"#F0F3BD",
 };
 
 function Nav() {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static'>
-				<Toolbar sx={{ backgroundColor: '#05668D', color: '#F0F3BD' }}>
+				<Toolbar sx={{ backgroundColor: '#00bbf9', color: '#F0F3BD' }}>
 					<Typography
 						variant='h6'
 						noWrap
