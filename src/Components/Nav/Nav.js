@@ -13,6 +13,7 @@ import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
 import CreateIcon from '@mui/icons-material/Create';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import "./Nav.css"
 
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -22,7 +23,7 @@ const Search = styled('div')(({ theme }) => ({
 		backgroundColor: alpha(theme.palette.common.white, 0.25),
 	},
 	marginLeft: 0,
-	width: '100%',
+	width: '50%',
 	[theme.breakpoints.up('sm')]: {
 		marginLeft: theme.spacing(1),
 		width: 'auto',
@@ -73,23 +74,30 @@ function Nav() {
 						sx={{
 							flexGrow: 1,
 							color: 'white',
-							display: { xs: 'none', sm: 'block' },
+							display: { xs: 'block', sm: 'block' },
+							fontSize: { xs: '20px', sm: '20px'}
 						}}>
 						
 						<Link to='/' style={linkStyle}>
 							{<AirplaneTicketIcon />}Travelgram
 						</Link>{' '}
 						&nbsp;&nbsp;
-						<Link to='/createPost' style={linkStyle}>
-							{<CreateIcon/>} Create Post
+						<Link to='/createPost' style={linkStyle} >
+							{<CreateIcon sx={{
+								display: {xs: 'none', md: 'inline'}
+							}}/>} <span class="navLinks">Create Post</span>
 						</Link>
 						&nbsp;&nbsp;
 						<Link to='/teamPage' style={linkStyle}>
-							{<ContactPageIcon />} Team Page
+							{<ContactPageIcon sx={{
+								display: {xs: 'none', md: 'inline'}
+							}}/>} <span class="navLinks">About</span>
 						</Link>
 						&nbsp;&nbsp;
 						<Link to='/login' style={linkStyle}>
-							{<VpnKeyIcon/>} Login
+							{<VpnKeyIcon sx={{
+								display: {xs: 'none', md: 'inline'}
+							}}/>} <span class="navLinks">Login</span>
 						</Link>
 					</Typography>
 

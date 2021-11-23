@@ -4,7 +4,22 @@ import Button from "@mui/material/Button";
 import { Container, Row, Col } from "react-bootstrap";
 import React, { useState } from "react";
 
+import { Link } from "react-router-dom";
+
+import { Paper } from "@mui/material";
+import { Form } from "react-bootstrap";
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "white",
+};
+
 function SignUp() {
+
+  
+
+
+
   const [user, setUser] = useState({
     email: "",
     name: "",
@@ -43,65 +58,92 @@ function SignUp() {
   return (
     <>
       
-      <Container>
-      
-        <Row className="justify-content-md-center">
-          <Col sm={3} lg={3}>
-          <h1>Sign Up</h1>
-            <Box
-            justifyContent="center"
-              component="form"
-              sx={{
-                "& .MuiTextField-root": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-              onSubmit={handleSubmit}
-            >
-                <TextField
-                  className="outlined-textarea"
-                  label="Email"
-                  placeholder="Email"
-                  multiline
-                  onChange={handleChange}
-                  value={user.email}
-                  name="email"
-                />
-                <TextField
-                  className="outlined-textarea"
-                  label="Full Name"
-                  placeholder="Full Name"
-                  multiline
-                  onChange={handleChange}
-                  value={user.name}
-                  name="name"
-                />
-                <TextField
-                  className="outlined-textarea"
-                  label="Username"
-                  placeholder="Username"
-                  multiline
+      <Container component="main">
+        <Paper
+          className="w-responsive text-center mx-auto p-3 mt-2"
+          elevation={3}
+        >
+          <Row className="justify-content-md-center">
+            <Col sm={6}>
+              <h1>Sign Up</h1>
+              <Form
+                onSubmit={handleSubmit}
+              >
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formPlaintextEmail"
+                >
+                  <Form.Label column sm="4" md="12"></Form.Label>
+                  <Col sm="12">
+                    <Form.Control 
+                    onChange={handleChange}
+                    value={user.email}
+                    name="email"
+                    placeholder="Email Address" />
+                  </Col>
+                </Form.Group>
+
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formPlaintextEmail"
+                >
+                  <Col sm="12">
+                    <Form.Control 
+                    onChange={handleChange}
+                    value={user.name}
+                    name="name"
+                    placeholder="Full Name" />
+                  </Col>
+                </Form.Group>
+
+                <Col sm="12">
+                  <Form.Control 
                   onChange={handleChange}
                   value={user.username}
                   name="username"
-                />
-                <TextField
-                  className="outlined-password-input"
-                  type="password"
-                  label="Password"
-                  autoComplete="current-password"
-                  onChange={handleChange}
-                  value={user.password}
-                  name="password"
-                />
-              
-                  <Button style={{backgroundColor: '#05668d'}} type="submit" variant="contained" size="large">
-                    Sign up
-                  </Button>
-               
-            </Box>
-          </Col>
-        </Row>
+                  placeholder="Username" />
+                </Col>
+
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formPlaintextPassword"
+                >
+                  <Form.Label column sm="12"></Form.Label>
+                  <Col sm="12">
+                    <Form.Control 
+                    onChange={handleChange}
+                    value={user.password}
+                    name="password"
+                    type="password" 
+                    placeholder="Password" />
+                  </Col>
+                </Form.Group>
+                <Button
+                  style={{ backgroundColor: "#05668d" }}
+                  variant="contained"
+                  size="large"
+                  type="submit"
+                >
+                  Sign Up
+                </Button>
+              </Form>
+              <br />
+              <p>OR</p>
+              <Button
+                style={{ backgroundColor: "#05668d" }}
+                variant="contained"
+                size="large"
+              >
+                <Link style={linkStyle} to="/login">
+                  Sign In
+                </Link>
+              </Button>
+            </Col>
+          </Row>
+        </Paper>
       </Container>
     </>
   );
