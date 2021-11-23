@@ -23,7 +23,7 @@ function Login() {
     console.log(event.target.value)
     const value = event.target.value;
     const name = event.target.name;
-    const copy = Object.assign({}, signIn);
+    const copy = Object.assign({}, loggedUser);
     copy[name] = value;
     setLoggedUser(copy);
   };
