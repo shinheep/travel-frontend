@@ -19,10 +19,11 @@ export default function AutoGridNoWrap() {
   return (
     <Root>
       <Box sx={{ flexGrow: 1, overflow: "hidden", px: 3 }}>
+	  <Typography textAlign="center">About Travelgram</Typography>
       <Paper
           sx={{
             width: {
-              xs: 420,
+              xs: 320,
               sm: 500,
               md: 700,
             },
@@ -33,10 +34,6 @@ export default function AutoGridNoWrap() {
         >
           <Grid justifyContent="center" container wrap="wrap" spacing={2}>
             <Grid item zeroMinWidth>
-            <Typography textAlign="center">
-                About Travelgram
-              </Typography>
-
               <Typography margin="20px">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
                 similique. Illo aut sint libero quos expedita dolore optio,
