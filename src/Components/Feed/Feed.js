@@ -1,28 +1,28 @@
-import React, {useState, useEffect} from 'react'
-import {Card} from 'react-bootstrap'
+import React, { useState, useEffect } from "react";
+import { Card } from "react-bootstrap";
+import './Feed.css'
 
 function Feed() {
+  const [feedData, setFeedData] = useState([]);
 
-	const [feedData, setFeedData] = useState([])
+  const makeApiCall = () => {
+    fetch("https://travelgram-app-heroku.herokuapp.com/posts")
+      .then((res) => res.json())
+      .then((data) => setFeedData(data.post));
+  };
 
-	const makeApiCall = () => {
-		fetch("https://travelgram-app-heroku.herokuapp.com/posts")
-		.then((res) => res.json())
-		.then((data) => setFeedData(data.post));
-	}
+  useEffect(() => {
+    makeApiCall();
+  }, []);
 
-	useEffect(() => {
-		makeApiCall()
-	}, [])
+  const likeCount = () => {
+    console.log("clicked");
+  };
 
-	const likeCount = () => {
-		console.log('clicked')
-	}
-
-	const posts = feedData.map((post) => {
-		return (
+  const posts = feedData.map((post) => {
+    return (
       <div className="postCard">
-        <Card style={{ width: "18rem" }}>
+        <Card >
           <Card.Img className="postImg" variant="top" src={post.img} />
           <Card.Body>
             <Card.Link onClick={likeCount}>
@@ -38,12 +38,11 @@ function Feed() {
         </Card>
       </div>
     );
-	})
+  });
 
-	return (
+  return (
     <div className="Feed">
-      <h1>Feed</h1>
-	  {posts}
+      {posts}
     </div>
   );
 }
