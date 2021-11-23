@@ -6,6 +6,8 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import { Link } from 'react-router-dom';
 
 function Footer() {
 	const [value, setValue] = useState(0);
@@ -16,7 +18,7 @@ function Footer() {
 				sx={{
 					backgroundColor: '#05668D',
 					position: 'fixed',
-					bottom:"0",
+					bottom: '0',
 					width: '100%',
 				}}
 				showLabels
@@ -25,19 +27,25 @@ function Footer() {
 					setValue(newValue);
 				}}>
 				<BottomNavigationAction
+					component={Link}
+					to='/createPost'
 					sx={{ color: '#F0F3BD' }}
 					label='Create Post'
 					icon={<PostAddIcon />}
 				/>
 				<BottomNavigationAction
+					component={Link}
+					to='/'
 					sx={{ color: '#F0F3BD' }}
 					label='Home'
 					icon={<HomeIcon />}
 				/>
 				<BottomNavigationAction
+					component={Link}
+					to='/teamPage'
 					sx={{ color: '#F0F3BD' }}
-					label='Search'
-					icon={<SearchIcon />}
+					label='Team Page'
+					icon={<AccountBoxIcon />}
 				/>
 			</BottomNavigation>
 		</Box>
