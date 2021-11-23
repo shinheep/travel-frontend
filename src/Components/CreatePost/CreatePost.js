@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Button from "@mui/material/Button";
+import React, {useState} from 'react';
 import TextField from "@mui/material/TextField";
-import "../createPost.css";
+import Button from "@mui/material/Button";
+import {Navigate} from 'react-router-dom'
+import './createPost.css';
 
 function CreatePost() {
   const [post, setPost] = useState({
@@ -11,6 +12,8 @@ function CreatePost() {
     price: "",
     caption: "",
   });
+
+  const [redirect, setRedirect] = useState(false)
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -32,14 +35,23 @@ function CreatePost() {
       body: JSON.stringify(post),
     })
       .then((response) => response.json())
-      .then((data) =>
+      .then((data) =>{
         setPost({ username: "", img: "", location: "", price: "", caption: "" })
-      );
+        setRedirect(true)
+      });
+
+      if(redirect) {
+        return <Navigate to='/'/>
+      }
   };
 
   return (
     <div className="CreatePost">
-      <h1>Create Post</h1>
+
+      <div className="plusButton">
+        <Button variant="outlined">+</Button>
+      </div>
+
       <div className="newPostContainer">
         <div className="newPostHeader"> Create New Post</div>
         <form onSubmit={handleSubmit}>
