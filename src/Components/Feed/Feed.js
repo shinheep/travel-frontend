@@ -19,9 +19,9 @@ function Feed() {
   }, []);
 
   const likedPost = (id) => {
-    fetch("http://localhost:8080/posts/" + id)
-    .then((res) => res.json())
-    .then((data) => console.log(data));
+    fetch("https://travelgram-app-heroku.herokuapp.com/posts/" + id)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
     console.log("clicked", id);
   };
 
@@ -35,7 +35,7 @@ function Feed() {
               <i class="far fa-heart">
               </i>
             </Card.Link>
-            <Card.Text>{post.likes[0].likes > 0 ? post.likes[0].likes + " likes": " "} </Card.Text>
+            {/* <Card.Text>{post.likes[0].likes > 0 ? post.likes[0].likes + " likes": " "} </Card.Text> */}
             <Card.Title>{post.username}</Card.Title>
             <Card.Text>
             <i class="fas fa-map-marker-alt"></i> {post.location} <br />
