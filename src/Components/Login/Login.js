@@ -83,10 +83,7 @@ function Login() {
                   Sign up
                 </Link>
               </Button>
-
               </div>
-
-              
             </Box>
           </Col>
         </Row>
