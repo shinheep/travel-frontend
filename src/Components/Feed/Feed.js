@@ -35,7 +35,7 @@ function Feed() {
               <i class="far fa-heart">
               </i>
             </Card.Link>
-            <Card.Text>{post.likes[0].likes > 0 ? post.likes[0].likes : " "} likes</Card.Text>
+            <Card.Text>{post.likes[0].likes > 0 ? post.likes[0].likes + " likes": " "} </Card.Text>
             <Card.Title>{post.username}</Card.Title>
             <Card.Text>
               {post.location} <br />
