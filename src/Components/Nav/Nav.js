@@ -59,14 +59,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const linkStyle = {
 	textDecoration: 'none',
-	color:"white",
+	color:"#F0F3BD",
+	marginLeft: 8,
 };
 
 function Nav() {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static'>
-				<Toolbar sx={{ backgroundColor: '#05668D', color: '#F0F3BD' }}>
+				<Toolbar sx={{ backgroundColor: '#00bbf9', color: '#F0F3BD' }}>
 					<Typography
 						variant='h6'
 						noWrap
@@ -81,22 +82,22 @@ function Nav() {
 						<Link to='/' style={linkStyle}>
 							{<AirplaneTicketIcon />}Travelgram
 						</Link>{' '}
-						&nbsp;&nbsp;
+						
 						<Link to='/createPost' style={linkStyle} >
 							{<CreateIcon sx={{
-								display: {xs: 'none', md: 'inline'}
+								display: {xs: 'none', sm: 'inline'}
 							}}/>} <span class="navLinks">Create Post</span>
 						</Link>
-						&nbsp;&nbsp;
+						
 						<Link to='/teamPage' style={linkStyle}>
 							{<ContactPageIcon sx={{
-								display: {xs: 'none', md: 'inline'}
+								display: {xs: 'none', sm: 'inline'}
 							}}/>} <span class="navLinks">About</span>
 						</Link>
-						&nbsp;&nbsp;
+						
 						<Link to='/login' style={linkStyle}>
 							{<VpnKeyIcon sx={{
-								display: {xs: 'none', md: 'inline'}
+								display: {xs: 'none', sm: 'inline'}
 							}}/>} <span class="navLinks">Login</span>
 						</Link>
 					</Typography>
