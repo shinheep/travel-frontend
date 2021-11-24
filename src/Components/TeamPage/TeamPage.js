@@ -11,7 +11,6 @@ const Root = styled("div")(({ theme }) => ({
   padding: theme.spacing(1),
   [theme.breakpoints.up("md")]: {
     margin: "1%",
-    fontFamily: "'Abril Fatface', cursive",
   },
 }));
 
@@ -44,7 +43,8 @@ export default function AutoGridNoWrap() {
           >
             <Grid justifyContent="center" container wrap="wrap" spacing={2}>
               <Grid item zeroMinWidth>
-                <Typography margin="20px">
+                <Typography fontSize="15px"
+            fontFamily="'Poppins', sans-serif" margin="20px">
                   Travelgram invites all travelers to share their adventures.
                   Share your recent travels and keep in touch with old friends
                   and find new ones as you all share your memories in one place.
@@ -73,7 +73,8 @@ export default function AutoGridNoWrap() {
           >
             <Grid justifyContent="center" container wrap="wrap" spacing={2}>
               <Grid item>
-                <Typography textAlign="center" padding="5px" margin="5px">
+                <Typography fontSize="15px"
+            fontFamily="'Poppins', sans-serif" textAlign="center" padding="5px" margin="5px">
                   Orawee Chantravutikorn
                 </Typography>
                 <Avatar
@@ -83,8 +84,8 @@ export default function AutoGridNoWrap() {
                       sm: 250,
                     },
                     height: {
-                      xs: 180, // theme.breakpoints.up('xs')
-                      sm: 250, // theme.breakpoints.up('sm')
+                      xs: 180, 
+                      sm: 250, 
                     },
                   }}
                   alt="Orawee Chantravutikorn"
