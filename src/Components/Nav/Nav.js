@@ -61,6 +61,16 @@ const linkStyle = {
 	textDecoration: 'none',
 	color:"white",
 	marginLeft: 8,
+	fontFamily:"'Poppins', sans-serif",
+	fontSize: 15
+};
+
+const linkStyle2 = {
+	textDecoration: 'none',
+	color:"white",
+	marginLeft: 8,
+	fontFamily:"'Abril Fatface', cursive",
+	fontSize: 21
 };
 
 function Nav() {
@@ -79,7 +89,7 @@ function Nav() {
 							fontSize: { xs: '20px', sm: '20px'}
 						}}>
 						
-						<Link to='/' style={linkStyle}>
+						<Link className="logo" to='/'  style={linkStyle2} >
 							{<AirplaneTicketIcon />}Travelgram
 						</Link>{' '}
 						

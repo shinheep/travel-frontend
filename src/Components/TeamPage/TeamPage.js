@@ -41,7 +41,7 @@ export default function AutoGridNoWrap() {
               p: 2,
             }}
           >
-            <Grid justifyContent="center" container wrap="nowrap" spacing={2}>
+            <Grid justifyContent="center" container wrap="wrap" spacing={2}>
               <Grid item zeroMinWidth>
                 <Typography fontSize="15px"
             fontFamily="'Poppins', sans-serif" margin="20px">
