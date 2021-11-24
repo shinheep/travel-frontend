@@ -60,6 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const linkStyle = {
 	textDecoration: 'none',
 	color:"#F0F3BD",
+	marginLeft: 8,
 };
 
 function Nav() {
@@ -81,22 +82,22 @@ function Nav() {
 						<Link to='/' style={linkStyle}>
 							{<AirplaneTicketIcon />}Travelgram
 						</Link>{' '}
-						&nbsp;&nbsp;
+						
 						<Link to='/createPost' style={linkStyle} >
 							{<CreateIcon sx={{
-								display: {xs: 'none', md: 'inline'}
+								display: {xs: 'none', sm: 'inline'}
 							}}/>} <span class="navLinks">Create Post</span>
 						</Link>
-						&nbsp;&nbsp;
+						
 						<Link to='/teamPage' style={linkStyle}>
 							{<ContactPageIcon sx={{
-								display: {xs: 'none', md: 'inline'}
+								display: {xs: 'none', sm: 'inline'}
 							}}/>} <span class="navLinks">About</span>
 						</Link>
-						&nbsp;&nbsp;
+						
 						<Link to='/login' style={linkStyle}>
 							{<VpnKeyIcon sx={{
-								display: {xs: 'none', md: 'inline'}
+								display: {xs: 'none', sm: 'inline'}
 							}}/>} <span class="navLinks">Login</span>
 						</Link>
 					</Typography>
