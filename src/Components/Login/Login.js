@@ -1,12 +1,13 @@
-import { Container, Col, Row } from "react-bootstrap";
-
+import { Col, Row, Container } from "react-bootstrap";
+import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
-
-
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import React, { useState } from "react";
+import { Paper } from "@mui/material";
+import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+import "./Login.css";
 
 const linkStyle = {
   textDecoration: "none",
@@ -14,81 +15,116 @@ const linkStyle = {
 };
 
 function Login() {
-  const [loggedUser, setLoggedUser] = useState({
+  const [user, setUser] = useState({
+    email: "",
+    name: "",
+    password: "",
+    username: "",
+  });
+
+  const [loggedUser, setloggedUser] = useState({
     email: "",
     password: "",
   });
 
   const handleChange = (event) => {
-    console.log(event.target.value)
-    const value = event.target.value;
-    const name = event.target.name;
+    // console.log(event.target.value)
+    const { value, name } = event.target;
     const copy = Object.assign({}, loggedUser);
     copy[name] = value;
-    setLoggedUser(copy);
+    setloggedUser(copy);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setloggedUser({ email: "", password: "" });
   };
 
   return (
     <>
-      <Container>
+      <Container component="main">
         <Row className="justify-content-md-center">
-          <Col sm={3}>
-            <h1>Sign In</h1>
-            <Box
-              justifyContent="center"
-              component="form"
-              sx={{
-                "& .MuiTextField-root": { m: 2, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
+          <Col sm={6}>
+            <Paper
+              className="w-responsive text-center mx-auto p-5 mt-2"
+              elevation={3}
             >
-              <TextField
-                className="outlined-textarea"
-                label="Email"
-                placeholder="Email Address"
-                multiline
-                onChange={handleChange}
-                value={loggedUser.email}
-                name="email"
-              />
+              <Row className="justify-content-md-center">
+                <Col sm={12}>
+                  <Typography fontFamily="'Abril Fatface', cursive">
+                    <h2>Sign in to Travelgram</h2>
+                  </Typography>
 
-              <TextField
-                className="outlined-password-input"
-                type="password"
-                label="Password"
-                autoComplete="current-password"
-                onChange={handleChange}
-                value={loggedUser.password}
-                name="password"
-              />
-              <div className= "buttons">
-              <Button
-              className="d-flex justify-content-end"
-                style={{ backgroundColor: "#05668d" }}
-                type="submit"
-                variant="contained"
-                size="large"
-              >
-                Sign in
-              </Button>
-             
-              <p>OR</p>
-              <Button
-                style={{ backgroundColor: "#05668d" }}
-                variant="contained"
-                size="large"
-              >
-                <Link style={linkStyle} to="/signup">
-                  Sign up
-                </Link>
-              </Button>
-              </div>
-            </Box>
+                  <Form onSubmit={handleSubmit}>
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formPlaintextEmail"
+                    >
+                      <Form.Label column sm="4" md="12"></Form.Label>
+                      <Col sm="12">
+                        <TextField
+                          fullWidth
+                          name="email"
+                          type="email"
+                          onChange={handleChange}
+                          value={loggedUser.email}
+                          label="Email"
+                          required
+                        />
+                      </Col>
+                    </Form.Group>
+                    <Form.Group
+                      as={Row}
+                      className="mb-3"
+                      controlId="formPlaintextPassword"
+                    >
+                      <Col sm="12">
+                        <TextField
+                          fullWidth
+                          name="password"
+                          type="password"
+                          value={loggedUser.password}
+                          onChange={handleChange}
+                          label="Password"
+                          required
+                        />
+                      </Col>
+                    </Form.Group>
+                    <Button
+                      style={{ backgroundColor: "#1A76D2" }}
+                      variant="contained"
+                      size="large"
+                      type="submit"
+                    >
+                      Sign In
+                    </Button>
+                  </Form>
+                </Col>
+              </Row>
+            </Paper>
+
+            <Paper
+              className="w-responsive text-center mx-auto p-3 mt-2"
+              elevation={3}
+            >
+              <p>New to Travelgram?</p>
+
+              <Link style={linkStyle} to="/signup">
+                <Button
+                  style={{ backgroundColor: "#1A76D2" }}
+                  variant="contained"
+                  size="large"
+                >
+                  <Link style={linkStyle} to="/signup">
+                    Create an Account
+                  </Link>
+                </Button>
+              </Link>
+            </Paper>
           </Col>
         </Row>
       </Container>
-
     </>
   );
 }
