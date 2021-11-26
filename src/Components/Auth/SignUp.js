@@ -1,12 +1,16 @@
 import Button from "@mui/material/Button";
 import { Container, Row, Col } from "react-bootstrap";
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { Paper } from "@mui/material";
 import { Form } from "react-bootstrap";
 import { TextField } from "@mui/material";
-import "../Login/Login.css";
+
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import UserContext from "../../context/userContext";
+import ErrorNotice from "./ErrorNotice";
 
 const linkStyle = {
   textDecoration: "none",
@@ -14,36 +18,35 @@ const linkStyle = {
 };
 
 function SignUp() {
-  const [user, setUser] = useState({
-    email: "",
-    name: "",
-    password: "",
-    username: "",
-  });
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [name, setName] = useState();
+  const [username, setUsername] = useState();
+  const [error, setError] = useState();
+  const { setUserData } = useContext(UserContext);
 
-  const handleChange = (event) => {
-    // console.log(event)
-    const value = event.target.value;
-    const name = event.target.name;
-    const copy = Object.assign({}, user);
-    copy[name] = value;
-    setUser(copy);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("User data submitted!");
-    fetch("http://localhost:8080/users/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((response) => response.json())
-      .then((data) =>
-        setUser({ email: "", name: "", password: "", username: "" })
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const newUser = { email, password, name, username };
+      await axios.post("http://localhost:8080/users/signup", newUser);
+      const loginResponse = await axios.post(
+        "http://localhost:8080/users/login",
+        {
+          email,
+          password,
+        }
       );
+      setUserData({
+        token: loginResponse.data.token,
+        user: loginResponse.data.user,
+      });
+      localStorage.setItem("auth-token", loginResponse.data.token);
+      navigate("/");
+    } catch (err) {
+      err.response.data.msg && setError(err.response.data.msg);
+    }
   };
 
   return (
@@ -56,9 +59,15 @@ function SignUp() {
               elevation={3}
             >
               <Col sm={12}>
-                <Typography fontFamily="'Abril Fatface', cursive">
+                <Typography fontFamily="'Poppins', sans-serif">
                   <h2>Create an Account</h2>
                 </Typography>
+                {error && (
+                  <ErrorNotice
+                    message={error}
+                    clearError={() => setError(undefined)}
+                  />
+                )}
 
                 <Form onSubmit={handleSubmit}>
                   <Form.Group
@@ -71,8 +80,7 @@ function SignUp() {
                       <TextField
                         fullWidth
                         required
-                        onChange={handleChange}
-                        value={user.email}
+                        onChange={(e) => setEmail(e.target.value)}
                         name="email"
                         label="Email Address"
                       />
@@ -88,8 +96,7 @@ function SignUp() {
                       <TextField
                         required
                         fullWidth
-                        onChange={handleChange}
-                        value={user.name}
+                        onChange={(e) => setName(e.target.value)}
                         name="name"
                         label="Full Name"
                       />
@@ -100,8 +107,7 @@ function SignUp() {
                     <TextField
                       required
                       fullWidth
-                      onChange={handleChange}
-                      value={user.username}
+                      onChange={(e) => setUsername(e.target.value)}
                       name="username"
                       label="Username"
                     />
@@ -117,8 +123,7 @@ function SignUp() {
                       <TextField
                         required
                         fullWidth
-                        onChange={handleChange}
-                        value={user.password}
+                        onChange={(e) => setPassword(e.target.value)}
                         name="password"
                         type="password"
                         label="Password"
@@ -137,7 +142,7 @@ function SignUp() {
               </Col>
             </Paper>
             <Paper
-              className="w-responsive text-center mx-auto p-3 mt-2"
+              className="w-responsive text-center mx-auto p-3 mt-4"
               elevation={3}
             >
               <p>Already have an account?</p>
@@ -145,7 +150,7 @@ function SignUp() {
                 <Button
                   style={{ backgroundColor: "#1A76D2" }}
                   variant="contained"
-                  size="large"
+                  size="medium"
                 >
                   <Link style={linkStyle} to="/login">
                     Sign In

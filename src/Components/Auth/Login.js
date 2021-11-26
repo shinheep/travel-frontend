@@ -1,13 +1,13 @@
-import { Col, Row, Container } from "react-bootstrap";
-import { Typography } from "@mui/material";
+import { Col, Row, Container, Form } from "react-bootstrap";
+import { Typography, Paper } from "@mui/material";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import React, { useState } from "react";
-import { Paper } from "@mui/material";
-import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
-import "./Login.css";
+import React, { useState, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { signInWithGoogle } from "../../firebase/firebase.utils";
+import axios from "axios";
+import UserContext from "../../context/userContext";
+import ErrorNotice from "./ErrorNotice";
 
 const linkStyle = {
   textDecoration: "none",
@@ -15,29 +15,30 @@ const linkStyle = {
 };
 
 function Login() {
-  const [user, setUser] = useState({
-    email: "",
-    name: "",
-    password: "",
-    username: "",
-  });
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [error, setError] = useState();
 
-  const [loggedUser, setloggedUser] = useState({
-    email: "",
-    password: "",
-  });
+  const { setUserData } = useContext(UserContext);
 
-  const handleChange = (event) => {
-    // console.log(event.target.value)
-    const { value, name } = event.target;
-    const copy = Object.assign({}, loggedUser);
-    copy[name] = value;
-    setloggedUser(copy);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setloggedUser({ email: "", password: "" });
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const loginUser = { email, password };
+      const loginResponse = await axios.post(
+        "http://localhost:8080/users/login",
+        loginUser
+      );
+      setUserData({
+        token: loginResponse.data.token,
+        user: loginResponse.data.user,
+      });
+      localStorage.setItem("auth-token", loginResponse.data.token);
+      navigate("/");
+    } catch (err) {
+      console.log(error);
+    }
   };
 
   return (
@@ -51,9 +52,15 @@ function Login() {
             >
               <Row className="justify-content-md-center">
                 <Col sm={12}>
-                  <Typography fontFamily="'Abril Fatface', cursive">
+                  <Typography fontFamily="'Poppins', sans-serif">
                     <h2>Sign in to Travelgram</h2>
                   </Typography>
+                  {error && (
+                    <ErrorNotice
+                      message={error}
+                      clearError={() => setError(undefined)}
+                    />
+                  )}
 
                   <Form onSubmit={handleSubmit}>
                     <Form.Group
@@ -67,8 +74,7 @@ function Login() {
                           fullWidth
                           name="email"
                           type="email"
-                          onChange={handleChange}
-                          value={loggedUser.email}
+                          onChange={(e) => setEmail(e.target.value)}
                           label="Email"
                           required
                         />
@@ -84,8 +90,7 @@ function Login() {
                           fullWidth
                           name="password"
                           type="password"
-                          value={loggedUser.password}
-                          onChange={handleChange}
+                          onChange={(e) => setPassword(e.target.value)}
                           label="Password"
                           required
                         />
@@ -99,13 +104,21 @@ function Login() {
                     >
                       Sign In
                     </Button>
+                    <Button
+                      style={{ backgroundColor: "#1A76D2" }}
+                      variant="contained"
+                      size="large"
+                      onClick={signInWithGoogle}
+                    >
+                      Sign in with Google
+                    </Button>
                   </Form>
                 </Col>
               </Row>
             </Paper>
 
             <Paper
-              className="w-responsive text-center mx-auto p-3 mt-2"
+              className="w-responsive text-center mx-auto p-3 mt-4"
               elevation={3}
             >
               <p>New to Travelgram?</p>
@@ -114,7 +127,7 @@ function Login() {
                 <Button
                   style={{ backgroundColor: "#1A76D2" }}
                   variant="contained"
-                  size="large"
+                  size="medium"
                 >
                   <Link style={linkStyle} to="/signup">
                     Create an Account
