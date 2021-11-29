@@ -37,7 +37,8 @@ function Login() {
       });
       localStorage.setItem("auth-token", loginResponse.data.token);
       navigate("/feed");
-    } catch (err) {
+    } 
+    catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }
   };
