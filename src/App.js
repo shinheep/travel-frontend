@@ -15,6 +15,13 @@ function App() {
     token: undefined,
     user: undefined,
   });
+
+  const [feedData, setFeedData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+
+
   useEffect(() => {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
@@ -23,12 +30,12 @@ function App() {
         token = "";
       }
       const tokenResponse = await axios.post(
-        "http://localhost:8080/users/tokenIsValid",
+        "https://travelgram-app-heroku.herokuapp.com/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
       );
       if (tokenResponse.data) {
-        const userRes = await axios.get("http://localhost:8080/users/", {
+        const userRes = await axios.get("https://travelgram-app-heroku.herokuapp.com/users/", {
           headers: { "x-auth-token": token },
         });
         setUserData({
@@ -40,13 +47,47 @@ function App() {
     checkLoggedIn();
   }, []);
 
+  const makeApiCall = () => {
+    fetch("https://travelgram-app-heroku.herokuapp.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setFeedData(data.post)
+      });
+  };
+
+  useEffect(() => {
+    makeApiCall();
+  }, []);
+
+  const searchHandler = (searchTerm) => {
+    setSearchTerm(searchTerm);
+    if (searchTerm !== "") {
+      const newFeed = feedData.filter((post) => {
+		  console.log(post.location.concat(''))
+		//  return (Object.values(post).join('').toLowerCase().includes(searchTerm))
+
+	 
+        // return Object.values(post)
+        //   .join("")
+        //   .toLowerCase()
+        //   .includes(searchTerm.toLowerCase());
+      });
+      setSearchResults(newFeed);
+    } else {
+      setSearchResults(feedData);
+    }
+  };
+
+
+
+
   return (
     <div className="App">
       <UserContext.Provider value={{ userData, setUserData }}>
-        <Nav />
+        <Nav term={searchTerm} searchKeyword={searchHandler}/>
         <Routes>
           <Route exact path="/Signup" element={<SignUp />} />
-          <Route exact path="/feed" element= {<Feed />}/>
+          <Route exact path="/feed" element= {<Feed  feedData={feedData}/>}/>
           <Route exact path="/createPost" element={<CreatePost />} />
           <Route exact path="/" element={<Login />}/>
           <Route exact path="/teamPage" element={<TeamPage />} />

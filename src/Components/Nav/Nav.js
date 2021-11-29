@@ -7,14 +7,13 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 // import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from "@mui/icons-material/Search";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
 import CreateIcon from "@mui/icons-material/Create";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import "./Nav.css";
-import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useRef } from "react";
 import UserContext from "../../context/userContext";
 
 const Search = styled("div")(({ theme }) => ({
@@ -75,7 +74,7 @@ const linkStyle2 = {
   fontSize: 21,
 };
 
-function Nav() {
+function Nav(props) {
   const { userData, setUserData } = useContext(UserContext);
   const navigate = useNavigate();
   const login = () => navigate("/login");
@@ -86,6 +85,14 @@ function Nav() {
     });
     localStorage.setItem("auth-token", "");
   };
+
+  const getSearchTerm = () => {
+    props.searchKeyword(inputEl.current.value);
+  };
+  const inputEl = useRef("");
+
+
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -148,6 +155,10 @@ function Nav() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+			onChange={getSearchTerm}
+			value={props.term}
+			ref={inputEl}
+			type="text"
               placeholder="Search"
               inputProps={{ "aria-label": "search" }}
             />
