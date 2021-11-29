@@ -27,7 +27,7 @@ function Login() {
     try {
       const loginUser = { email, password };
       const loginResponse = await axios.post(
-        "http://localhost:8080/users/login",
+        "https://travelgram-app-heroku.herokuapp.com/users/login",
         loginUser
       );
       setUserData({
