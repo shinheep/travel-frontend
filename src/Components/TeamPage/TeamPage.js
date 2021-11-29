@@ -48,7 +48,8 @@ export default function AutoGridNoWrap() {
 								<Typography
 									fontSize='15px'
 									fontFamily="'Poppins', sans-serif"
-									margin='20px'>
+									margin='20px'
+									textAlign="center">
 									Travelgram invites all travelers to share their adventures.
 									Share your recent travels and keep in touch with old friends
 									and find new ones as you all share your memories in one place.
@@ -123,7 +124,12 @@ export default function AutoGridNoWrap() {
 						}}>
 						<Grid justifyContent='center' container wrap='wrap' spacing={2}>
 							<Grid item>
-								<Typography textAlign='center' padding='5px' margin='5px'>
+								<Typography
+									fontSize='30px'
+									fontFamily="'Poppins', sans-serif"
+									textAlign='center'
+									padding='5px'
+									margin='5px'>
 									Alex Delaney
 								</Typography>
 								<Avatar
@@ -164,7 +170,12 @@ export default function AutoGridNoWrap() {
 						}}>
 						<Grid justifyContent='center' container wrap='wrap' spacing={2}>
 							<Grid item>
-								<Typography textAlign='center' padding='5px' margin='5px'>
+								<Typography
+									fontSize='30px'
+									fontFamily="'Poppins', sans-serif"
+									textAlign='center'
+									padding='5px'
+									margin='5px'>
 									Shinhee Park
 								</Typography>
 								<Avatar
@@ -205,7 +216,12 @@ export default function AutoGridNoWrap() {
 						}}>
 						<Grid justifyContent='center' container wrap='wrap' spacing={2}>
 							<Grid item>
-								<Typography textAlign='center' padding='5px' margin='5px'>
+								<Typography
+									fontSize='30px'
+									fontFamily="'Poppins', sans-serif"
+									textAlign='center'
+									padding='5px'
+									margin='5px'>
 									Daniel Lee
 								</Typography>
 								<Avatar
