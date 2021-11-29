@@ -16,7 +16,7 @@ const Root = styled('div')(({ theme }) => ({
 
 //is not responsive
 const linkStyle = {
-	marginLeft: "30%",
+	margin: 'auto',
 };
 
 export default function AutoGridNoWrap() {
@@ -77,7 +77,7 @@ export default function AutoGridNoWrap() {
 							<Grid item>
 								<Typography
 									//change font size moves image around
-									fontSize='45px'
+									fontSize='30px'
 									fontFamily="'Poppins', sans-serif"
 									textAlign='center'
 									padding='5px'
@@ -127,6 +127,7 @@ export default function AutoGridNoWrap() {
 									Alex Delaney
 								</Typography>
 								<Avatar
+									style={linkStyle}
 									sx={{
 										width: {
 											xs: 180,
@@ -167,6 +168,7 @@ export default function AutoGridNoWrap() {
 									Shinhee Park
 								</Typography>
 								<Avatar
+									style={linkStyle}
 									sx={{
 										width: {
 											xs: 180,
@@ -207,6 +209,7 @@ export default function AutoGridNoWrap() {
 									Daniel Lee
 								</Typography>
 								<Avatar
+									style={linkStyle}
 									sx={{
 										width: {
 											xs: 180,
