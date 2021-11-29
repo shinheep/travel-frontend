@@ -102,7 +102,7 @@ function Nav() {
               fontSize: { xs: "20px", sm: "20px" },
             }}
           >
-            <Link className="logo" to="/" style={linkStyle2}>
+            <Link className="logo" to="/feed" style={linkStyle2}>
               {<AirplaneTicketIcon />}Travelgram
             </Link>{" "}
             <Link to="/createPost" style={linkStyle}>
@@ -125,7 +125,7 @@ function Nav() {
               }{" "}
               <span class="navLinks">About</span>
             </Link>
-            <Link to="/login" style={linkStyle}>
+            <Link to="/" style={linkStyle}>
               {
                 <VpnKeyIcon
                   sx={{

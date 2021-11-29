@@ -29,7 +29,7 @@ function Footer() {
 				}}>
 				<BottomNavigationAction
 					component={Link}
-					to='/'
+					to='/feed'
 					sx={{ color: 'white' }}
 					label='Home'
 					icon={<HomeIcon />}

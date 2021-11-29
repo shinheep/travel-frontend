@@ -46,9 +46,9 @@ function App() {
         <Nav />
         <Routes>
           <Route exact path="/Signup" element={<SignUp />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/feed" element= {<Feed />}/>
           <Route exact path="/createPost" element={<CreatePost />} />
-          <Route exact path="/" element={<Feed />} />
+          <Route exact path="/" element={<Login />}/>
           <Route exact path="/teamPage" element={<TeamPage />} />
         </Routes>
         <Footer />
