@@ -1,0 +1,20 @@
+#root
+	> div
+	> div.container
+	> div
+	> div
+	> div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation3.w-responsive.text-center.mx-auto.p-5.mt-2.css-3su884-MuiPaper-root
+	> div
+	> div
+	> form
+	> button:nth-child(3) {
+	margin-bottom: 10px;
+}
+
+/* Large devices (desktops, 992px and up) */
+  @media screen and (min-width: 992px) {
+    #root > div > div.container > div > div > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation3.w-responsive.text-center.mx-auto.p-5.mt-2.css-3su884-MuiPaper-root > div > div > form > button:nth-child(3){
+        margin-top: 10px;
+    }
+  }
+  

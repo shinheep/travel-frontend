@@ -8,6 +8,7 @@ import { signInWithGoogle } from "../../firebase/firebase.utils";
 import axios from "axios";
 import UserContext from "../../context/userContext";
 import ErrorNotice from "./ErrorNotice";
+import "./Login.css"
 
 const linkStyle = {
   textDecoration: "none",

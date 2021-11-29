@@ -15,9 +15,9 @@ const Root = styled('div')(({ theme }) => ({
 }));
 
 //is not responsive
-// const linkStyle = {
-// 	marginLeft: 160,
-// };
+const linkStyle = {
+	marginLeft: "30%",
+};
 
 export default function AutoGridNoWrap() {
 	return (
@@ -27,7 +27,7 @@ export default function AutoGridNoWrap() {
 					fontFamily="'Poppins', sans-serif"
 					sx={{ flexGrow: 1, overflow: 'hidden', px: 3 }}>
 					<Typography
-						fontSize='40px'
+						fontSize='5%'
 						fontFamily="'Abril Fatface', cursive"
 						textAlign='center'>
 						About Travelgram
@@ -86,7 +86,7 @@ export default function AutoGridNoWrap() {
 								</Typography>
 
 								<Avatar
-									// style={linkStyle}
+									style={linkStyle}
 									sx={{
 										width: {
 											xs: 180,
