@@ -20,6 +20,7 @@ function Footer() {
 					position: 'fixed',
 					bottom: '0',
 					width: '100%',
+					
 				}}
 				showLabels
 				value={value}
@@ -28,22 +29,23 @@ function Footer() {
 				}}>
 				<BottomNavigationAction
 					component={Link}
-					to='/createPost'
-					sx={{ color: '#F0F3BD' }}
-					label='Create Post'
-					icon={<PostAddIcon />}
-				/>
-				<BottomNavigationAction
-					component={Link}
 					to='/'
-					sx={{ color: '#F0F3BD' }}
+					sx={{ color: 'white' }}
 					label='Home'
 					icon={<HomeIcon />}
 				/>
 				<BottomNavigationAction
 					component={Link}
+					to='/createPost'
+					sx={{ color: 'white' }}
+					label='Create Post'
+					icon={<PostAddIcon />}
+				/>
+				
+				<BottomNavigationAction
+					component={Link}
 					to='/teamPage'
-					sx={{ color: '#F0F3BD' }}
+					sx={{ color: 'white' }}
 					label='About'
 					icon={<AccountBoxIcon />}
 				/>
