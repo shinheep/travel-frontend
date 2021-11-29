@@ -110,7 +110,7 @@ function Nav(props) {
             }}
           >
             <Link className="logo" to="/feed" style={linkStyle2}>
-              {<AirplaneTicketIcon />}Travelgram
+              {<AirplaneTicketIcon />}TravelGram
             </Link>{" "}
             <Link to="/createPost" style={linkStyle}>
               {
