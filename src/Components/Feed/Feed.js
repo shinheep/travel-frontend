@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import './Feed.css'
 
-function Feed() {
-  const [feedData, setFeedData] = useState([]);
+function Feed(props) {
+  // const [feedData, setFeedData] = useState([]);
   // const [likeCount, setLikeCount] = useState({likes:0})
 
-  const makeApiCall = () => {
-    fetch("https://travelgram-app-heroku.herokuapp.com/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        setFeedData(data.post)
-      });
-  };
+  // const makeApiCall = () => {
+  //   fetch("https://travelgram-app-heroku.herokuapp.com/posts")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setFeedData(data.post)
+  //     });
+  // };
 
-  useEffect(() => {
-    makeApiCall();
-  }, []);
+  // useEffect(() => {
+  //   makeApiCall();
+  // }, []);
 
   const likedPost = (id) => {
     fetch("https://travelgram-app-heroku.herokuapp.com/posts/" + id)
@@ -25,7 +25,7 @@ function Feed() {
     console.log("clicked", id);
   };
 
-  const posts = feedData.map((post) => {
+  const posts = props.feedData.map((post) => {
     return (
       <div className="postCard">
         <Card>
