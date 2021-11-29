@@ -62,13 +62,17 @@ function App() {
   const searchHandler = (searchTerm) => {
     setSearchTerm(searchTerm);
     if (searchTerm !== "") {
-      const copy = feedData.filter((film) => {
-        return Object.values(film)
-          .join("")
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+      const newFeed = feedData.filter((post) => {
+		  console.log(post.location.concat(''))
+		//  return (Object.values(post).join('').toLowerCase().includes(searchTerm))
+
+	 
+        // return Object.values(post)
+        //   .join("")
+        //   .toLowerCase()
+        //   .includes(searchTerm.toLowerCase());
       });
-      setSearchResults(copy);
+      setSearchResults(newFeed);
     } else {
       setSearchResults(feedData);
     }
@@ -83,7 +87,7 @@ function App() {
         <Nav term={searchTerm} searchKeyword={searchHandler}/>
         <Routes>
           <Route exact path="/Signup" element={<SignUp />} />
-          <Route exact path="/feed" element= {<Feed  feedData={searchTerm.length < 1 ? feedData : searchResults}/>}/>
+          <Route exact path="/feed" element= {<Feed  feedData={feedData}/>}/>
           <Route exact path="/createPost" element={<CreatePost />} />
           <Route exact path="/" element={<Login />}/>
           <Route exact path="/teamPage" element={<TeamPage />} />
