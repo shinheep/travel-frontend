@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Navigate } from "react-router-dom";
 import "./createPost.css";
+import UserContext from "../../context/userContext";
 
 const linkStyle = {
   textDecoration: "none",
@@ -10,6 +11,8 @@ const linkStyle = {
 };
 
 function CreatePost() {
+  const { userData } = useContext(UserContext);
+
   const [post, setPost] = useState({
     username: "",
     img: "",
@@ -32,7 +35,7 @@ function CreatePost() {
     event.preventDefault();
     console.log(event);
     console.log("Travel data submitted!");
-    fetch("https://travelgram-app-heroku.herokuapp.com/posts", {
+    fetch("https://travelgram-app-heroku.herokuapp.com/users/newpost/" + userData.user.username, {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",
@@ -53,7 +56,7 @@ function CreatePost() {
   };
 
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to="/feed" />;
   }
 
   return (
