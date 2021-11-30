@@ -30,9 +30,9 @@ function SignUp() {
     e.preventDefault();
     try {
       const newUser = { email, password, name, username };
-      await axios.post("http://localhost:8080/users/signup", newUser);
+      await axios.post("https://travelgram-app-heroku.herokuapp.com/users/signup", newUser);
       const loginResponse = await axios.post(
-        "http://localhost:8080/users/login",
+        "https://travelgram-app-heroku.herokuapp.com/users/login",
         {
           email,
           password,
@@ -43,7 +43,7 @@ function SignUp() {
         user: loginResponse.data.user,
       });
       localStorage.setItem("auth-token", loginResponse.data.token);
-      navigate("/");
+      navigate("/feed");
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }

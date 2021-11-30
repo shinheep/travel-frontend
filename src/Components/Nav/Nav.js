@@ -2,20 +2,21 @@ import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-// import IconButton from '@mui/material/IconButton';
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-// import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from "@mui/icons-material/Search";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
 import CreateIcon from "@mui/icons-material/Create";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import "./Nav.css";
-import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useRef } from "react";
 import UserContext from "../../context/userContext";
+import ClearIcon from '@mui/icons-material/Clear';
+import Button from '@mui/material/Button';
+
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -75,7 +76,8 @@ const linkStyle2 = {
   fontSize: 21,
 };
 
-function Nav() {
+function Nav(props) {
+	console.log(props)
   const { userData, setUserData } = useContext(UserContext);
   const navigate = useNavigate();
   const login = () => navigate("/login");
@@ -86,6 +88,11 @@ function Nav() {
     });
     localStorage.setItem("auth-token", "");
   };
+
+  const getSearchTerm = () => {
+    props.searchKeyword(inputEl.current.value);
+  };
+  const inputEl = useRef("");
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -102,8 +109,8 @@ function Nav() {
               fontSize: { xs: "20px", sm: "20px" },
             }}
           >
-            <Link className="logo" to="/" style={linkStyle2}>
-              {<AirplaneTicketIcon />}Travelgram
+            <Link className="logo" to="/feed" style={linkStyle2}>
+              {<AirplaneTicketIcon />}TravelGram
             </Link>{" "}
             <Link to="/createPost" style={linkStyle}>
               {
@@ -125,7 +132,7 @@ function Nav() {
               }{" "}
               <span class="navLinks">About</span>
             </Link>
-            <Link to="/login" style={linkStyle}>
+            <Link to="/" style={linkStyle}>
               {
                 <VpnKeyIcon
                   sx={{
@@ -146,12 +153,23 @@ function Nav() {
           <Search id="Search">
             <SearchIconWrapper>
               <SearchIcon />
-            </SearchIconWrapper>
+			</SearchIconWrapper>
+            
             <StyledInputBase
+              onChange={(getSearchTerm)}
+              value={props.term}
+              inputRef={inputEl}
+              type="text"
               placeholder="Search"
               inputProps={{ "aria-label": "search" }}
             />
+			
+			
           </Search>
+		  {/* <Button sx={{m:1, color:"black", backgroundColor:"white", height:"100%"}} display="flex" variant="outlined" size="small"><ClearAllRounded/></Button> */}
+		  <ClearIcon onClick={() => {
+              props.handleClearClick({ getSearchTerm });
+            }}/>
         </Toolbar>
       </AppBar>
     </Box>

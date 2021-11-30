@@ -6,6 +6,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { Link } from 'react-router-dom';
 
@@ -29,7 +30,7 @@ function Footer() {
 				}}>
 				<BottomNavigationAction
 					component={Link}
-					to='/'
+					to='/feed'
 					sx={{ color: 'white' }}
 					label='Home'
 					icon={<HomeIcon />}
@@ -44,10 +45,10 @@ function Footer() {
 				
 				<BottomNavigationAction
 					component={Link}
-					to='/teamPage'
+					to='/explore'
 					sx={{ color: 'white' }}
-					label='About'
-					icon={<AccountBoxIcon />}
+					label='Explore'
+					icon={<TravelExploreIcon />}
 				/>
 			</BottomNavigation>
 		</Box>

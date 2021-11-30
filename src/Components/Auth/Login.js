@@ -36,8 +36,9 @@ function Login() {
         user: loginResponse.data.user,
       });
       localStorage.setItem("auth-token", loginResponse.data.token);
-      navigate("/");
-    } catch (err) {
+      navigate("/feed");
+    } 
+    catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }
   };

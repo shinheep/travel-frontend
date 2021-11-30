@@ -2,22 +2,13 @@
     margin: 5px auto !important;
     width: 90%;
 }
-.Feed {
+.Explore {
     margin-top: 10px;
     margin-bottom: 70px;
 }
 
-.fa-thin {
+.fas, .fa-map-marker {
     font-size: 20px;
-}
-
-.loginMessage {
-    text-align: center;
-}
-.flexRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
