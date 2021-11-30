@@ -2,10 +2,8 @@ import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-// import IconButton from '@mui/material/IconButton';
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-// import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from "@mui/icons-material/Search";
 import { Link, useNavigate } from "react-router-dom";
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
@@ -15,6 +13,10 @@ import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import "./Nav.css";
 import React, { useContext, useRef } from "react";
 import UserContext from "../../context/userContext";
+import ClearIcon from '@mui/icons-material/Clear';
+import Button from '@mui/material/Button';
+
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -75,6 +77,7 @@ const linkStyle2 = {
 };
 
 function Nav(props) {
+	console.log(props)
   const { userData, setUserData } = useContext(UserContext);
   const navigate = useNavigate();
   const login = () => navigate("/login");
@@ -90,9 +93,6 @@ function Nav(props) {
     props.searchKeyword(inputEl.current.value);
   };
   const inputEl = useRef("");
-
-
-
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -153,16 +153,23 @@ function Nav(props) {
           <Search id="Search">
             <SearchIconWrapper>
               <SearchIcon />
-            </SearchIconWrapper>
+			</SearchIconWrapper>
+            
             <StyledInputBase
-			onChange={getSearchTerm}
-			value={props.term}
-			ref={inputEl}
-			type="text"
+              onChange={(getSearchTerm)}
+              value={props.term}
+              inputRef={inputEl}
+              type="text"
               placeholder="Search"
               inputProps={{ "aria-label": "search" }}
             />
+			
+			
           </Search>
+		  {/* <Button sx={{m:1, color:"black", backgroundColor:"white", height:"100%"}} display="flex" variant="outlined" size="small"><ClearAllRounded/></Button> */}
+		  <ClearIcon onClick={() => {
+              props.handleClearClick({ getSearchTerm });
+            }}/>
         </Toolbar>
       </AppBar>
     </Box>
