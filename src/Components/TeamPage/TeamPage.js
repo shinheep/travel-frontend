@@ -101,7 +101,7 @@ export default function AutoGridNoWrap() {
 									src='https://res.cloudinary.com/orawee/image/upload/v1634152166/LRG_DSC04871_o04xck.jpg'></Avatar>
 							</Grid>
 							<Grid item zeroMinWidth>
-								<Typography>
+								<Typography textAlign='center'>
 									Orawee is responsible for the functionality of the Login/Signup Component, as well as the functionality of the Search bar in the Nav to provide a full stack experience for the user. She designed the initial setup of the team page, as well as contributed to vital CSS aspects of the app. She also collaborated with the team with the initial builds on the front-end, and back-end. 
 								</Typography>
 							</Grid>
@@ -120,7 +120,8 @@ export default function AutoGridNoWrap() {
 						}}>
 						<Grid justifyContent='center' container wrap='wrap' spacing={2}>
 							<Grid item>
-								<Typography textAlign='center' padding='5px' margin='5px'>
+								<Typography textAlign='center' padding='5px' margin='5px' fontSize='30px'
+									fontFamily="'Poppins', sans-serif">
 									Alex Delaney
 								</Typography>
 								<Avatar
@@ -139,7 +140,7 @@ export default function AutoGridNoWrap() {
 									src='https://res.cloudinary.com/orawee/image/upload/v1637696028/Screen_Shot_2021-11-23_at_11.33.09_AM_edtp5x.png'></Avatar>
 							</Grid>
 							<Grid item zeroMinWidth>
-								<Typography>
+								<Typography textAlign='center'>
 								Alex is responsible for the functionality, design, and responsiveness of the Feed and Explore components. She implemented CRUD functionality on both pages to create for a better user experience. She played a key role in the functionality of the backend, which allowed each post to be associated with its username data. She also collaborated with the team with the initial builds on the front-end and back end.
 								</Typography>
 							</Grid>
@@ -158,7 +159,8 @@ export default function AutoGridNoWrap() {
 						}}>
 						<Grid justifyContent='center' container wrap='wrap' spacing={2}>
 							<Grid item>
-								<Typography textAlign='center' padding='5px' margin='5px'>
+							<Typography textAlign='center' padding='5px' margin='5px' fontSize='30px'
+									fontFamily="'Poppins', sans-serif">
 									Shinhee Park
 								</Typography>
 								<Avatar
@@ -177,7 +179,7 @@ export default function AutoGridNoWrap() {
 									src='https://res.cloudinary.com/orawee/image/upload/v1637695723/StudioGhibli/Screen_Shot_2021-11-23_at_11.28.05_AM_v7tfra.png'></Avatar>
 							</Grid>
 							<Grid item zeroMinWidth>
-								<Typography>
+								<Typography textAlign='center'>
 								Shinhee is responsible for the CRUD functionality of the Create Post component. She also worked on the responsiveness on the Nav Bar to optimize its functionality for mobile, and desktop view. She assisted in some of the CSS aspects throughout the app, and collaborated with the team with the initial builds on the front-end, and back-end.
 								</Typography>
 							</Grid>
@@ -196,7 +198,8 @@ export default function AutoGridNoWrap() {
 						}}>
 						<Grid justifyContent='center' container wrap='wrap' spacing={2}>
 							<Grid item>
-								<Typography textAlign='center' padding='5px' margin='5px'>
+							<Typography textAlign='center' padding='5px' margin='5px' fontSize='30px'
+									fontFamily="'Poppins', sans-serif">
 									Daniel Lee
 								</Typography>
 								<Avatar
@@ -215,7 +218,7 @@ export default function AutoGridNoWrap() {
 									src='https://res.cloudinary.com/orawee/image/upload/v1637704503/IMG_4291_so3m4j.jpg'></Avatar>
 							</Grid>
 							<Grid item zeroMinWidth>
-								<Typography>
+								<Typography textAlign='center'>
 								Daniel is responsible for the initial set up, design, and functionality of both the Header and Footer Navs. He contributed much of the CSS seen on our page, and fixed the nitty gritty details within certain components. He also collaborated with the team with the initial builds on the front-end, and back-end.
 								</Typography>
 							</Grid>
