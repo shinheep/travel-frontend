@@ -2,6 +2,9 @@
 
 Our team will be creating a fullstack web application that will allow people to share their travel experience to a community of other travellers using this application.
 
+View Screen Shot of our app below:
+![Screen Shot 2021-11-30 at 9 15 20 AM](https://user-images.githubusercontent.com/90231932/144096351-cc57a32a-1999-4556-a9a5-6a8e8fe94e2b.png)
+
 ## Project Schedule
 
 |  Day | Deliverable | Status
@@ -47,10 +50,6 @@ Our team will be creating a fullstack mobile-first application that will allow p
 - Chat Bot
 
 ## Functional Components
-
-Based on the initial logic defined in the previous sections try and breakdown the logic further into smaller components.  Try and capture what logic would need to be defined if the game was broken down into the following categories.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the portfolio. Your estimates can then be used to evalute possibilities based on time needed and the actual time you have before the portfolio must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
 #### MVP
 | Component | Priority | Estimated Time | Actual Time |
