@@ -4,18 +4,14 @@ Our team will be creating a fullstack web application that will allow people to 
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Project Description | Incomplete
-|Day 1| Wireframes / Priority Matrix / Timeline | Incomplete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| MVP & Bug Fixes | Incomplete
-|Day 5| Final Touches | Incomplete
-|Day 6| Present | Incomplete
+|Day 1| Project Description | Complete
+|Day 1| Wireframes / Priority Matrix / Timeline | Complete
+|Day 2-4| Core Application Structure (HTML, CSS, etc.) | Complete
+|Day 5-6| MVP & Bug Fixes | Complete
+|Day 6-7| Final Touches | Complete
+|Day 8| Present | Complete
 
 
 ## Project Description
@@ -60,28 +56,29 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | 
 | WireFraming | H | 2hr | 1 hr |
-| Content, Layout, Structure | H | 4hr | - hr |  
-| User Authentication/Log In Page | H | 4hr | - hr|
-| Create Post Page (Picture, Destination, Caption) | H | 4hr | - hr|
-| Feed Page (Read posts from other users) | H | 4hr | - hr|
-| Responsive Design | H | 3hr| - hr |  
-| Meet our Team Page | M | 3hr| - hr |
-| CSS | H | 4hrs| - hr | 
-| Total | H | 28 hrs| - hrs |
+| Content, Layout, Structure | H | 4hr | 6 hr |  
+| Create Post Page (Picture, Destination, Caption) | H | 4hr | 3 hr|
+| Feed Page (Read posts from other users) | H | 4hr | 5 hr|
+| Responsive Design | H | 3hr| 4 hr |  
+| Meet our Team Page | M | 3hr| 3 hr |
+| CSS | H | 4hrs| 4 hr | 
+| Total | H | 28 hrs| 33 hrs |
 
 #### PostMVP
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: | 
-| Following other users | M | 5hr | 0 hr | 0 hr |
-| Direct Messaging System | M | 3hr | 0 hr | 0 hr |
-| Chat Bot | L | 3hr | 0 hr | 0 hr |
+| User Authentication/Log In Page | H | 4hr | 7 hr|
+| Direct Messaging System | M | 3hr | - hr | - hr |
+| Chat Bot | L | 3hr | - hr | - hr |
 
-| Total | H | 11 hrs| 0 hrs |
+| Total | H | 11 hrs| 7 hrs |
 
 ## Additional Libraries
-
+Font Awesome Icons
+MUI Library
 
 
 ## Issues and Resolutions
+Because we incorporated a User Auth, we had some trouble grabbing the posts of each user to display on the Explore page. We found a workaround to make an API Call for one specific user that makes posts with different Usernames. However, when given more time, we definitely want to update the functionality for this one.
 
 # travel-frontend
