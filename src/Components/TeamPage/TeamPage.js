@@ -180,7 +180,7 @@ export default function AutoGridNoWrap() {
 							</Grid>
 							<Grid item zeroMinWidth>
 								<Typography textAlign='center'>
-								Shinhee is responsible for the CRUD functionality of the Create Post component. She also worked on the responsiveness on the Nav Bar to optimize its functionality for mobile, and desktop view. She assisted in some of the CSS aspects throughout the app, and collaborated with the team with the initial builds on the front-end, and back-end.
+								Shinhee is responsible for the CRUD functionality of the Create Post component. She also worked on the responsiveness on the Nav Bar to optimize its functionality for mobile, and desktop view. She assisted in some of the vital CSS aspects throughout the app, and collaborated with the team with the initial builds on the front-end, and back-end. She also contributed in the administrative tasks like the initial setup of the React app, ReadMe updates, and the bios of each team member.
 								</Typography>
 							</Grid>
 						</Grid>
