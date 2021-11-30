@@ -7,12 +7,17 @@
     margin-bottom: 70px;
 }
 
-.fas, .fa-map-marker {
+.fa-thin {
     font-size: 20px;
 }
 
 .loginMessage {
     text-align: center;
+}
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media screen and (min-width: 768px) {
