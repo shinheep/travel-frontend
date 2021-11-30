@@ -22,8 +22,7 @@ function App() {
   const [feedData, setFeedData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-
-
+  const [clearInput, setClearInput] = useState(false);
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -38,9 +37,12 @@ function App() {
         { headers: { "x-auth-token": token } }
       );
       if (tokenResponse.data) {
-        const userRes = await axios.get("https://travelgram-app-heroku.herokuapp.com/users/", {
-          headers: { "x-auth-token": token },
-        });
+        const userRes = await axios.get(
+          "https://travelgram-app-heroku.herokuapp.com/users/",
+          {
+            headers: { "x-auth-token": token },
+          }
+        );
         setUserData({
           token,
           user: userRes.data,
@@ -50,32 +52,26 @@ function App() {
     checkLoggedIn();
   }, []);
 
-  console.log(userData)
+  const makeApiCall = () => {
+    fetch("http://localhost:8080/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setFeedData(data.post);
+      });
+  };
 
-  // const makeApiCall = () => {
-  //   fetch("https://travelgram-app-heroku.herokuapp.com/users" + userData.user)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data)
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   makeApiCall();
-  // }, []);
+  useEffect(() => {
+    makeApiCall();
+  }, [clearInput]);
 
   const searchHandler = (searchTerm) => {
     setSearchTerm(searchTerm);
     if (searchTerm !== "") {
       const newFeed = feedData.filter((post) => {
-		  console.log(post.location.concat(''))
-		//  return (Object.values(post).join('').toLowerCase().includes(searchTerm))
-
-	 
-        // return Object.values(post)
-        //   .join("")
-        //   .toLowerCase()
-        //   .includes(searchTerm.toLowerCase());
+        return Object.values(post.location)
+          .join("")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
       });
       setSearchResults(newFeed);
     } else {
@@ -83,18 +79,33 @@ function App() {
     }
   };
 
-
-
+  const handleClearClick = () => {
+    setClearInput(true);
+    setSearchTerm("");
+    setSearchResults(feedData);
+  };
 
   return (
     <div className="App">
       <UserContext.Provider value={{ userData, setUserData }}>
-        <Nav term={searchTerm} searchKeyword={searchHandler}/>
+        <Nav
+          handleClearClick={handleClearClick}
+          term={searchTerm}
+          searchKeyword={searchHandler}
+        />
         <Routes>
           <Route exact path="/Signup" element={<SignUp />} />
-          <Route exact path="/feed" element= {<Feed  feedData={feedData}/>}/>
+          <Route
+            exact
+            path="/feed"
+            element={
+              <Feed
+                feedData={searchTerm.length < 1 ? feedData : searchResults}
+              />
+            }
+          />
           <Route exact path="/createPost" element={<CreatePost />} />
-          <Route exact path="/" element={<Login />}/>
+          <Route exact path="/" element={<Login />} />
           <Route exact path="/teamPage" element={<TeamPage />} />
           <Route exact path="/explore" element={<Explore />} />
         </Routes>
