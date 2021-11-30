@@ -102,10 +102,7 @@ export default function AutoGridNoWrap() {
 							</Grid>
 							<Grid item zeroMinWidth>
 								<Typography>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-									similique. Illo aut sint libero quos expedita dolore optio,
-									error sit architecto placeat nulla laudantium ad minus
-									repellat. Dolores, porro molestiae!
+									Orawee is responsible for the functionality of the Login/Signup Component, as well as the functionality of the Search bar in the Nav to provide a full stack experience for the user. She designed the initial setup of the team page, as well as contributed to vital CSS aspects of the app. She also collaborated with the team with the initial builds on the front-end, and back-end. 
 								</Typography>
 							</Grid>
 						</Grid>
@@ -143,10 +140,7 @@ export default function AutoGridNoWrap() {
 							</Grid>
 							<Grid item zeroMinWidth>
 								<Typography>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-									similique. Illo aut sint libero quos expedita dolore optio,
-									error sit architecto placeat nulla laudantium ad minus
-									repellat. Dolores, porro molestiae!
+								Alex is responsible for the functionality, design, and responsiveness of the Feed and Explore components. She implemented CRUD functionality on both pages to create for a better user experience. She played a key role in the functionality of the backend, which allowed each post to be associated with its username data. She also collaborated with the team with the initial builds on the front-end and back end.
 								</Typography>
 							</Grid>
 						</Grid>
@@ -184,10 +178,7 @@ export default function AutoGridNoWrap() {
 							</Grid>
 							<Grid item zeroMinWidth>
 								<Typography>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-									similique. Illo aut sint libero quos expedita dolore optio,
-									error sit architecto placeat nulla laudantium ad minus
-									repellat. Dolores, porro molestiae!
+								Shinhee is responsible for the CRUD functionality of the Create Post component. She also worked on the responsiveness on the Nav Bar to optimize its functionality for mobile, and desktop view. She assisted in some of the CSS aspects throughout the app, and collaborated with the team with the initial builds on the front-end, and back-end.
 								</Typography>
 							</Grid>
 						</Grid>
@@ -225,10 +216,7 @@ export default function AutoGridNoWrap() {
 							</Grid>
 							<Grid item zeroMinWidth>
 								<Typography>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-									similique. Illo aut sint libero quos expedita dolore optio,
-									error sit architecto placeat nulla laudantium ad minus
-									repellat. Dolores, porro molestiae!
+								Daniel is responsible for the initial set up, design, and functionality of both the Header and Footer Navs. He contributed much of the CSS seen on our page, and fixed the nitty gritty details within certain components. He also collaborated with the team with the initial builds on the front-end, and back-end.
 								</Typography>
 							</Grid>
 						</Grid>
