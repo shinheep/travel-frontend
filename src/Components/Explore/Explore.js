@@ -14,7 +14,7 @@ function Explore() {
     // }
 
     const tempApiCall = () => {
-        fetch("https://travelgram-app-heroku.herokuapp.com/users/danielmlee92")
+        fetch("https://travelgram-app-heroku.herokuapp.com/users/daniel123")
         .then(res => res.json())
         .then(data => setExploreData(data.user.posts));
     }
