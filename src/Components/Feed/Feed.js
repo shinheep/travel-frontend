@@ -90,7 +90,7 @@ function Feed(props) {
     <div>
     <div className='loginMessage'>
       {userData.user ? (
-        <h1>Welcome {userData.user.name}</h1>
+        <h1 style = {{textAlign:"center"}}>Welcome {userData.user.name}</h1>
       ) : (
         <>
           <h2>Uh oh.  Looks like you are not logged in. Login to view your feed.</h2>
