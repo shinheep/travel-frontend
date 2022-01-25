@@ -14,7 +14,7 @@ const Root = styled("div")(({ theme }) => ({
   },
 }));
 
-//is not responsive
+
 const linkStyle = {
   margin: "auto",
 };
