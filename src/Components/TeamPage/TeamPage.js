@@ -82,6 +82,69 @@ export default function AutoGridNoWrap() {
             <Grid justifyContent="center" container wrap="wrap" spacing={2}>
               <Grid item>
                 <Typography
+                  textAlign="center"
+                  padding="5px"
+                  margin="5px"
+                  fontSize="30px"
+                  fontFamily="'Poppins', sans-serif"
+                >
+                  Shinhee Park
+                </Typography>
+                <Avatar
+                  style={linkStyle}
+                  sx={{
+                    width: {
+                      xs: 180,
+                      sm: 250,
+                    },
+                    height: {
+                      xs: 180,
+                      sm: 250,
+                    },
+                  }}
+                  alt=""
+                  src="https://res.cloudinary.com/orawee/image/upload/v1637695723/StudioGhibli/Screen_Shot_2021-11-23_at_11.28.05_AM_v7tfra.png"
+                ></Avatar>
+              </Grid>
+              <Grid item zeroMinWidth>
+                <Typography textAlign="center">
+                  <div>Shinhee is responsible for the CRUD functionality of the
+                  Create Post component. She also worked on the responsiveness
+                  on the Nav Bar to optimize its functionality for mobile, and
+                  desktop view. She assisted in some of the vital CSS aspects
+                  throughout the app, and collaborated with the team with the
+                  initial builds on the front-end, and back-end. She also
+                  contributed in the administrative tasks such as, the ReadMe
+                  updates, and the bios of each team member.
+				  </div>
+				  
+				  <a
+                    target="blank"
+                    href="https://www.linkedin.com/in/shinhee-park/"
+                  >
+                      <i class="fab fa-linkedin icon"></i>
+                  </a>
+
+                </Typography>
+              </Grid>
+            </Grid>
+          </Paper>
+          
+          <Paper
+            sx={{
+              width: {
+                xs: 320,
+                sm: 400,
+                md: 600,
+              },
+              my: 1,
+              mx: "auto",
+              p: 2,
+            }}
+          >
+            <Grid justifyContent="center" container wrap="wrap" spacing={2}>
+              <Grid item>
+                <Typography
                   //change font size moves image around
                   fontSize="30px"
                   fontFamily="'Poppins', sans-serif"
@@ -190,68 +253,7 @@ export default function AutoGridNoWrap() {
               </Grid>
             </Grid>
           </Paper>
-          <Paper
-            sx={{
-              width: {
-                xs: 320,
-                sm: 400,
-                md: 600,
-              },
-              my: 1,
-              mx: "auto",
-              p: 2,
-            }}
-          >
-            <Grid justifyContent="center" container wrap="wrap" spacing={2}>
-              <Grid item>
-                <Typography
-                  textAlign="center"
-                  padding="5px"
-                  margin="5px"
-                  fontSize="30px"
-                  fontFamily="'Poppins', sans-serif"
-                >
-                  Shinhee Park
-                </Typography>
-                <Avatar
-                  style={linkStyle}
-                  sx={{
-                    width: {
-                      xs: 180,
-                      sm: 250,
-                    },
-                    height: {
-                      xs: 180,
-                      sm: 250,
-                    },
-                  }}
-                  alt=""
-                  src="https://res.cloudinary.com/orawee/image/upload/v1637695723/StudioGhibli/Screen_Shot_2021-11-23_at_11.28.05_AM_v7tfra.png"
-                ></Avatar>
-              </Grid>
-              <Grid item zeroMinWidth>
-                <Typography textAlign="center">
-                  <div>Shinhee is responsible for the CRUD functionality of the
-                  Create Post component. She also worked on the responsiveness
-                  on the Nav Bar to optimize its functionality for mobile, and
-                  desktop view. She assisted in some of the vital CSS aspects
-                  throughout the app, and collaborated with the team with the
-                  initial builds on the front-end, and back-end. She also
-                  contributed in the administrative tasks such as, the ReadMe
-                  updates, and the bios of each team member.
-				  </div>
-				  
-				  <a
-                    target="blank"
-                    href="https://www.linkedin.com/in/shinhee-park/"
-                  >
-                      <i class="fab fa-linkedin icon"></i>
-                  </a>
 
-                </Typography>
-              </Grid>
-            </Grid>
-          </Paper>
           <Paper
             sx={{
               width: {
