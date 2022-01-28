@@ -97,6 +97,12 @@ function Feed(props) {
             <h2>Error</h2>
             <div>Uh oh!  Looks like you are not logged in <i class="far fa-frown"></i>. <Link to="/">Login</Link> to view your feed, or check out our <Link to="/explore">Explore</Link> Page!</div>
           </div>
+
+          <div className="guest">
+              <div>Feel free to use the guest login to explore without signing up!</div>
+              <div><span className="bold">Username:</span> guest@guest.com</div>
+              <div><span className="bold">Password:</span> guest</div>
+          </div>
           
         </>
       )}
