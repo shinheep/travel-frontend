@@ -137,6 +137,19 @@ function Login() {
                 </Button>
               </Link>
             </Paper>
+
+            <Paper
+              className="w-responsive text-center mx-auto p-3 mt-4"
+              elevation={3}
+            >
+              <p>Don't want to sign up?</p>
+              <p ><span className="guestLogin">Username:</span> guest@guest.com</p>
+              <p ><span className="guestLogin">Password:</span> guest</p>
+
+
+            </Paper>
+
+            
           </Col>
         </Row>
       </Container>

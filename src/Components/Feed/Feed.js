@@ -93,9 +93,13 @@ function Feed(props) {
         <h1 style = {{textAlign:"center"}}>Welcome {userData.user.name}</h1>
       ) : (
         <>
+          
+          <h1 className="mainTitle">TravelGram</h1>
+          
+          <lottie-player src="https://assets3.lottiefiles.com/datafiles/AtGF4p7zA8LpP2R/data.json"  background="transparent"  speed="1"  style={{width: "300px"}, {height: "300px"}}  loop  autoplay></lottie-player>
+
           <div className="invitationToLogin">
-            <h2>Error</h2>
-            <div>Uh oh!  Looks like you are not logged in <i class="far fa-frown"></i>. <Link to="/">Login</Link> to view your feed, or check out our <Link to="/explore">Explore</Link> Page!</div>
+            <div><Link to="/">Login</Link> to view your feed, or check out our <Link to="/explore">Explore</Link> Page!</div>
           </div>
 
           <div className="guest">
