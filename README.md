@@ -4,7 +4,6 @@ Our team will be creating a fullstack web application that will allow people to 
 
 View Screen Shot of our app below:
 ![Desktop Screenshot](https://user-images.githubusercontent.com/90231932/144096351-cc57a32a-1999-4556-a9a5-6a8e8fe94e2b.png "Screenshot")
-()
 
 ## Project Schedule
 
