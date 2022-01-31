@@ -104,7 +104,7 @@ function Feed(props) {
 
           <div className="guest">
               <div>Feel free to use the guest login to explore without signing up!</div>
-              <div><span className="bold">Username:</span> guest@guest.com</div>
+              <div><span className="bold">Email:</span> guest@guest.com</div>
               <div><span className="bold">Password:</span> guest</div>
           </div>
           
