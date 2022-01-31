@@ -2,8 +2,8 @@
 
 Our team will be creating a fullstack web application that will allow people to share their travel experience to a community of other travellers using this application.
 
-View Screen Shot of our app below:
-![Desktop Screenshot](https://user-images.githubusercontent.com/90231932/144096351-cc57a32a-1999-4556-a9a5-6a8e8fe94e2b.png "Screenshot")
+View the GIF of the project here:
+![Alt Text](https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599423/Screen_Recording_2022-01-30_at_7_22_09_PM_AdobeCreativeCloudExpress_xj6hob.gif)
 
 ## Project Schedule
 
