@@ -2,7 +2,7 @@
 
 Our team will be creating a fullstack web application that will allow people to share their travel experience to a community of other travellers using this application.
 
-View the GIF of the project here:
+View the GIF of the project here: <br>
 ![Alt Text](https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599423/Screen_Recording_2022-01-30_at_7_22_09_PM_AdobeCreativeCloudExpress_xj6hob.gif)
 
 ## Project Schedule
