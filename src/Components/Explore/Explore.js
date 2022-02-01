@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
+import SearchForm from "../Nav/SearchForm";
 import "./explore.css";
 
 function Explore(props) {
@@ -8,6 +9,7 @@ function Explore(props) {
     props.feedData.map((post) => {
       return (
         <div className="postCard">
+          <SearchForm/>
           <Card>
             <Card.Img className="postImg" variant="top" src={post.img} />
             <Card.Body>

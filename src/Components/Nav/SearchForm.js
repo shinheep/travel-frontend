@@ -1,4 +1,4 @@
-export default function SearchForm () {
+export default function SearchForm (props) {
     return (
         <>
         <Col xs={12} sm={12} md={12}>

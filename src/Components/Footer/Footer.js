@@ -52,13 +52,6 @@ function Footer() {
           icon={<TravelExploreIcon />}
         />
 
-        <BottomNavigationAction
-          component={Link}
-          to="/teampage"
-          sx={{ color: "white" }}
-          label="About"
-          icon={<PeopleIcon />}
-        />
       </BottomNavigation>
     </Box>
   );
