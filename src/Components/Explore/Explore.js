@@ -9,7 +9,7 @@ function Explore(props) {
     props.feedData.map((post) => {
       return (
         <div className="postCard">
-          <SearchForm/>
+          {/* <SearchForm/> */}
           <Card>
             <Card.Img className="postImg" variant="top" src={post.img} />
             <Card.Body>

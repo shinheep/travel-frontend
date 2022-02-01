@@ -122,16 +122,7 @@ function Nav(props) {
               }{" "}
               <span class="navLinks">Create Post</span>
             </Link>
-            <Link to="/teamPage" style={linkStyle}>
-              {
-                <ContactPageIcon
-                  sx={{
-                    display: { xs: "none", sm: "inline" },
-                  }}
-                />
-              }{" "}
-              <span class="navLinks">About</span>
-            </Link>
+
             <Link to="/" style={linkStyle}>
               {
                 <VpnKeyIcon
