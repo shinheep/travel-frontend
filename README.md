@@ -5,13 +5,16 @@ Our team will be creating a fullstack web application that will allow people to 
 View the GIF of the project here: <br>
 
 Exploring user's feed: <br>
-![Alt Text](https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599423/Screen_Recording_2022-01-30_at_7_22_09_PM_AdobeCreativeCloudExpress_xj6hob.gif) <br>
+<img src="https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599423/Screen_Recording_2022-01-30_at_7_22_09_PM_AdobeCreativeCloudExpress_xj6hob.gif" width="250" height="250"/>
+<br>
 
 Uploading pictures on user's feed: <br>
-![Alt Text](https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599694/Screen_Recording_2022-01-30_at_7_26_59_PM_AdobeCreativeCloudExpress_tfqnje.gif) <br>
+<img src="https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599694/Screen_Recording_2022-01-30_at_7_26_59_PM_AdobeCreativeCloudExpress_tfqnje.gif" width="250" height="250"/>
+<br>
 
 Controlled search on Explore page: <br>
-![Alt Text](https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599824/Screen_Recording_2022-01-30_at_7_28_52_PM_AdobeCreativeCloudExpress_qodpcm.gif)
+<img src="https://res.cloudinary.com/dxqwpud0l/image/upload/v1643599824/Screen_Recording_2022-01-30_at_7_28_52_PM_AdobeCreativeCloudExpress_qodpcm.gif" width="250" height="250"/>
+<br>
 
 ## Project Schedule
 
